@@ -1,4 +1,4 @@
-package com.ultimate.umc_study1;
+package com.umc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

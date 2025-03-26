@@ -1,4 +1,4 @@
-package com.ultimate.umc_study1;
+package com.umc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
