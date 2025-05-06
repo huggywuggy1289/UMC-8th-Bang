@@ -54,15 +54,19 @@ public class Member extends BaseEntity {
 
     // 양방향 매핑
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @Builder.Default
     private List<MemberAgree> memberAgreeList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @Builder.Default
     private List<MemberPrefer> memberPreferList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @Builder.Default
     private List<Review> reviewList = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @Builder.Default
     private List<MemberMission> memberMissionList = new ArrayList<>();
 
 }

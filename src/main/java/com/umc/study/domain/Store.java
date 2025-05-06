@@ -3,6 +3,10 @@ package com.umc.study.domain;
 import com.umc.study.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -26,4 +30,23 @@ public class Store extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id", nullable = false)
     private Region region;
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    @Builder.Default
+    private List<Mission> missionList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+    @Builder.Default
+    private List<Review> reviewList = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", score=" + score +
+                ", region=" + (region != null ? region.getName() : "N/A") + // region의 이름 출력
+                '}';
+    }
 }
