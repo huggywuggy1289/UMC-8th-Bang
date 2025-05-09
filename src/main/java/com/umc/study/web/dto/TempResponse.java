@@ -14,4 +14,12 @@ public class TempResponse {
     public static class TempTestDTO{
         String testString;
     }
+    // 이부분 추가
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class TempExceptionDTO{
+        Integer flag;
+    }
 }
